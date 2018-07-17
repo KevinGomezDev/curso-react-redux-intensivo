@@ -1,54 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import DataList from '../DataList';
+import LifeCycle from '../LifeCycle';
 import './Calculator.css';
 
 class Calculator extends Component {
     state = {
-        data: ['John', 'Sebas', 'Doe'],
-        multiply: 2,
-        list1: [],
-        list2: [],
-        list3: [],
-    };
-
-    constructor(props) {
-        super(props);
+        showLifeCycle: true,
+        counter: 0,
+        childCounter: 0,
     }
 
-    handleClickOnButton = (multi) => {
-        const { list1, list2 } = this.state;
+    handleClickOnToggleButton = () => {
+        // const { showLifeCycle } = this.state;
+        this.setState(state => ({
+            counter: state.counter + 1,
+        }));
+        // this.setState({ showLifeCycle: !showLifeCycle });
+    }
 
-        const number = Math.round(Math.random() * 10) * multi;
-        if (multi === 1) {
-            list1.push(number);
-        } else {
-            list2.push(number);
-        }
-
-        this.setState({ list1, list2, list3: [...list1, ...list2] });
+    componentWillUnmount() {
+        console.log('UNMOUNT PAPA');
     }
 
     render() {
-        const { title, className } = this.props;
-        const { data, list1, list2, list3 } = this.state;
+        const { className } = this.props;
+        const { showLifeCycle, counter, childCounter } = this.state;
 
-        console.log(this.state);
+        console.log('RENDER PAPA!');
 
         return (
             <div className={cx('Calc-root', className)}>
-                <h1>{title}</h1>
-                <button onClick={() => this.handleClickOnButton(1)}>0 - 10</button>
-                <button onClick={() => this.handleClickOnButton(10)}>0 - 100</button>
-                <DataList data={list1} />
-                <DataList data={list2} />
+                <h1>LifeCycle: {counter}</h1>
+                {showLifeCycle && <LifeCycle counterProp={counter} />}
                 <hr />
-                <DataList data={list3} />
-
-                <hr />
-
-                <DataList data={data} />
+                <button onClick={this.handleClickOnToggleButton}>Toggle LifeCycle</button>
             </div>
         );
     }

@@ -1,21 +1,21 @@
-import React from 'react';
-import logo from '../../logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import Sider from '../Sider';
 import Calculator from '../Calculator';
 
-const App = () => (
-    <div className="App">
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-        </header>
+class App extends Component {
+    state = {
+        renderMain: true,
+    }
 
-        <Sider title="Gato" />
-        <div className="APP-content">
-            <Calculator className="App-calc" title="Mi Calculadora" />
-        </div>
-    </div>
-);
+    render() {
+        const { renderMain } = this.state;
+        return (
+            <div className="App">
+                {renderMain && <Calculator className="App-calc" title="Mi Calculadora" />}
+                {false && <button onClick={() => this.setState({ renderMain: !renderMain })}>App Button</button>}
+            </div>
+        );
+    }
+}
 
 export default App;
