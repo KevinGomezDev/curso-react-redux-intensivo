@@ -1,0 +1,51 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "comma-dangle": [
+      "error", {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "curly": ["error", "all"],
+    "no-trailing-spaces": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "max-len": ["error", { "code": 120 }],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "react/jsx-indent": [2, 4],
+    "react/jsx-indent-props": [2, 4],
+    "import/prefer-default-export": 0,
+    "object-curly-newline": 0,
+    "function-paren-newline": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.config.js"],
+      "env": {
+        "browser": true,
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": ["*.test.js"],
+      "env": {
+        "browser": true,
+        "jest": true
+      }
+    }
+  ]
+}

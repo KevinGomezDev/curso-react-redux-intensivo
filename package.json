@@ -2,17 +2,51 @@
   "name": "test-react",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "antd": "^3.6.1",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-import": "^1.7.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "react-dev-utils": "^5.0.1",
+    "react-hot-loader": "^4.2.0",
+    "redux-mock-store": "^1.5.3",
+    "sass-loader": "^7.0.2",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.4"
   }
 }

@@ -1,32 +1,11 @@
-import React, { Component } from 'react';
-import './App.css';
-import Form from '../Form';
+import React from 'react';
+import { Layout } from 'antd';
+import styles from './App.scss';
 
-class App extends Component {
-    state = {
-        user: {
-            firstName: 'Sebas',
-            lastName: 'Fernandez',
-            gender: 1,
-            active: true,
-        }
-    }
-
-    handleChangeOnForm = (e) => {
-        const { user } = this.state;
-        let value = e.target.value;
-        if (e.target.type === 'radio') value = value === 'true';
-        user[e.target.name] = value;
-        this.setState({ user });
-    }
-
-    render() {
-        return (
-            <div className="App">
-                <Form user={this.state.user} onChange={this.handleChangeOnForm} />
-            </div>
-        );
-    }
-}
+const App = () => (
+    <Layout className={styles.App}>
+        <h1>My App</h1>
+    </Layout>
+);
 
 export default App;
