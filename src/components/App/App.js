@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
-import Calculator from '../Calculator';
+import Form from '../Form';
 
 class App extends Component {
     state = {
-        renderMain: true,
+        user: {
+            firstName: 'Sebas',
+            lastName: 'Fernandez',
+            gender: 1,
+            active: true,
+        }
+    }
+
+    handleChangeOnForm = (e) => {
+        const { user } = this.state;
+        let value = e.target.value;
+        if (e.target.type === 'radio') value = value === 'true';
+        user[e.target.name] = value;
+        this.setState({ user });
     }
 
     render() {
-        const { renderMain } = this.state;
         return (
             <div className="App">
-                {renderMain && <Calculator className="App-calc" title="Mi Calculadora" />}
-                {false && <button onClick={() => this.setState({ renderMain: !renderMain })}>App Button</button>}
+                <Form user={this.state.user} onChange={this.handleChangeOnForm} />
             </div>
         );
     }
