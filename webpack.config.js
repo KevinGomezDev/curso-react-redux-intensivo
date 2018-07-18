@@ -6,8 +6,8 @@ const JSRule = {
     exclude: /node_modules/,
     use: [
         'babel-loader',
-        'eslint-loader'
-    ]
+        'eslint-loader',
+    ],
 };
 
 const SASSRule = {
@@ -21,12 +21,12 @@ const SASSRule = {
                 importLoaders: 1,
                 localIdentName: '[name]_[local]_[hash:base64:5]',
                 sourceMap: true,
-                minimize: true
-            }
+                minimize: true,
+            },
         },
         { loader: 'postcss-loader' },
-        { loader: 'sass-loader' }
-    ]
+        { loader: 'sass-loader' },
+    ],
 };
 
 const ImagesRule = {
@@ -34,9 +34,9 @@ const ImagesRule = {
     use: {
         loader: 'url-loader',
         options: {
-            limit: 25000
-        }
-    }
+            limit: 25000,
+        },
+    },
 };
 
 const LESSRule = {
@@ -44,14 +44,14 @@ const LESSRule = {
     use: [
         { loader: 'style-loader' },
         { loader: 'css-loader' },
-        { loader: 'less-loader' }
-    ]
+        { loader: 'less-loader' },
+    ],
 };
 
 // Plugins
 const htmlPlugin = new HtmlWebPackPlugin({
     template: './src/index.html',
-    filename: './index.html'
+    filename: './index.html',
 });
 
 module.exports = {
@@ -59,12 +59,12 @@ module.exports = {
         app: [
             'react-hot-loader/patch',
             'react-dev-utils/webpackHotDevClient',
-            './src/index.js'
-        ]
+            './src/index.js',
+        ],
     },
     module: { rules: [JSRule, SASSRule, LESSRule, ImagesRule] },
     plugins: [htmlPlugin],
     devServer: {
-        historyApiFallback: true
-    }
+        historyApiFallback: true,
+    },
 };

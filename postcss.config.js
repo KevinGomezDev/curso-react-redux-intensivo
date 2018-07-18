@@ -11,8 +11,8 @@ module.exports = {
                 'Explorer >= 9',
                 'iOS >= 7',
                 'Opera >= 12',
-                'Safari >= 7.1'
-            ]
-        })
-    ]
+                'Safari >= 7.1',
+            ],
+        }),
+    ],
 };
