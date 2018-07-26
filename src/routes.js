@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Posts from './pages/Posts';
+import Posts from './containers/Posts';
 import NotFound from './pages/NotFound';
 
 const Routes = () => (
