@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../Patterns/data'
 import './App.css';
 
 import Human from '../Patterns/Human';
@@ -8,9 +7,9 @@ import Animal from '../Patterns/Animal';
 
 const App = () => (
     <div className="App">
-        <Human { ...data} />
-        <Alien {...data} />
-        <Animal {...data} />
+        <Human />
+        <Alien />
+        <Animal />
     </div>
 );
 
