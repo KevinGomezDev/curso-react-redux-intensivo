@@ -1,7 +1,6 @@
 import React from 'react';
 import image from './assets/human.svg'
 import './styles/draw.css';
-import ClothesHOC from './ClothesHOC'
 
 const Human = (props) => <div>
   {!!props.hat && <img src={require(`./assets/${props.hat}`)} className='hat' />}
@@ -9,4 +8,4 @@ const Human = (props) => <div>
   <img src={image} className='graphic' />
 </div>
 
-export default ClothesHOC(Human);
+export default Human;
