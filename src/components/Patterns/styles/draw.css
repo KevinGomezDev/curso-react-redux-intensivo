@@ -1,0 +1,17 @@
+.graphic {
+  width: 400px;
+}
+
+.hat {
+  position: absolute;
+  left: 100px;
+  top: -50px;
+  width: 200px;
+}
+
+.sunglasses {
+  position: absolute;
+  left: 45px;
+  top: -10px;
+  width: 300px;
+}
