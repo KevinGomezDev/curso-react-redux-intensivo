@@ -1,16 +1,16 @@
 import React from 'react';
 import image from './assets/human.svg'
 import './styles/draw.css';
-import ClothesFaaC from '../Patterns/ClothesFaaC'
+import { MyContextConsumer } from "../Patterns/ClothesContext";
 
-const DumbHuman = (props) => <div>
-  {!!props.hat && <img src={require(`./assets/${props.hat}`)} className='hat' />}
-  {!!props.sunglasses && <img src={require(`./assets/${props.sunglasses}`)} className='sunglasses' />}
-  <img src={image} className='graphic' />
-</div>
-
-const Human = () => <ClothesFaaC>
-  {(props) => <DumbHuman {...props} />}
-</ClothesFaaC> 
+const Human = () => { 
+  return <MyContextConsumer>
+  {(context) => <div>
+    {!!context.state.data.hat && <img src={require(`./assets/${context.state.data.hat}`)} className='hat' />}
+    {!!context.state.data.sunglasses && <img src={require(`./assets/${context.state.data.sunglasses}`)} className='sunglasses' />}
+    <img src={image} className='graphic' />
+  </div>}
+</MyContextConsumer>
+}
 
 export default Human;
