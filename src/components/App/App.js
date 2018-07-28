@@ -1,16 +1,13 @@
 import React from 'react';
 import './App.css';
-import { MyProvider } from '../Patterns/ClothesContext';
-
+import data from '../Patterns/data';
 import Human from '../Patterns/Human';
 import Alien from '../Patterns/Alien';
 import Animal from '../Patterns/Animal';
 
 const App = () => (
     <div className="App">
-        <MyProvider>
-            <Human />
-        </MyProvider>
+        <Human />
         <Alien />
         <Animal />
     </div>
