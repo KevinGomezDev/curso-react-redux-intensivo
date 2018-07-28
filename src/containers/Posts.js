@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addToCount, removeToCount } from '../actions/counter';
+import { fetchPosts, fetchPost } from '../actions/posts';
 import Posts from '../pages/Posts';
 
 const mapStateToProps = state => ({
-    count: state.count,
-    lastAction: state.lastAction,
+    post: state.post,
+    posts: state.posts,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    addToCount,
-    removeToCount,
+    fetchPosts,
+    fetchPost,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);

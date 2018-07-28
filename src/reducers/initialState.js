@@ -1,4 +1,14 @@
 export default {
     count: 0,
-    lastAction: 'Hola',
+    post: {
+        postId: null,
+        isFetching: false,
+        data: null,
+        error: null,
+    },
+    posts: {
+        isFetching: false,
+        data: [],
+        error: null,
+    },
 };
