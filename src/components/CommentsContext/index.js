@@ -14,8 +14,6 @@ export class MyProvider extends Component {
         const { postId } = this.props;
         axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then(result => this.setState({ comments: result.data }));
-
-        console.log(this.state.comments);
     }
 
     render() {
