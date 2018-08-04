@@ -11,4 +11,9 @@ export default {
         data: [],
         error: null,
     },
+    users: {
+        isFetching: false,
+        data: [],
+        error: null,
+    },
 };

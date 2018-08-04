@@ -11,6 +11,7 @@ const menu = [
     { id: '1', text: 'Menu 1', url: '/' },
     { id: '2', text: 'Menu 2', url: '/posts' },
     { id: '3', text: 'Menu 3', url: '/dksjfbsjdkh' },
+    { id: '4', text: 'Menu 4', url: '/users' },
 ];
 
 const AppLayout = ({ children }) => (

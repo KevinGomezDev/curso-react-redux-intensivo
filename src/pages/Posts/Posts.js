@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Spin, Modal } from 'antd';
+import { MyProvider } from '../../components/CommentsContext';
+import Comments from '../../components/Comments';
 import styles from './Posts.scss';
 
 class Posts extends Component {
@@ -40,6 +42,9 @@ class Posts extends Component {
                     <p>
                         {post.data && post.data.body}
                     </p>
+                    <MyProvider postId={post.postId}>
+                        <Comments />
+                    </MyProvider>
                 </Modal>
             </Fragment>
         );
