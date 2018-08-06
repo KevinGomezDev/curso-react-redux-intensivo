@@ -11,4 +11,15 @@ export default {
         data: [],
         error: null,
     },
+    user: {
+        userId: null,
+        isFetching: false,
+        data: [],
+        error: null,
+    },
+    users: {
+        isFetching: false,
+        data: [],
+        error: null,
+    },
 };

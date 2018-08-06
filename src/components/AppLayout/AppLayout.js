@@ -8,9 +8,10 @@ import styles from './AppLayout.scss';
 const { Content } = Layout;
 
 const menu = [
-    { id: '1', text: 'Menu 1', url: '/' },
-    { id: '2', text: 'Menu 2', url: '/posts' },
-    { id: '3', text: 'Menu 3', url: '/dksjfbsjdkh' },
+    { id: '1', text: 'Form', url: '/' },
+    { id: '2', text: 'Posts', url: '/posts' },
+    { id: '3', text: 'Nothing', url: '/dksjfbsjdkh' },
+    { id: '4', text: 'Users', url: '/users' },
 ];
 
 const AppLayout = ({ children }) => (
