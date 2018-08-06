@@ -8,3 +8,11 @@ export const ERR_POSTS = 'ERR_POSTS';
 export const REQ_POST = 'REQ_POST';
 export const RCV_POST = 'RCV_POST';
 export const ERR_POST = 'ERR_POST';
+
+export const REQ_USERS = 'REQ_USERS';
+export const RCV_USERS = 'RCV_USERS';
+export const ERR_USERS = 'ERR_USERS';
+
+export const REQ_USER = 'REQ_USER';
+export const RCV_USER = 'RCV_USER';
+export const ERR_USER = 'ERR_USER';

@@ -2,8 +2,11 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Spin, Modal } from 'antd';
 import styles from './Posts.scss';
+import Comments from '../../components/Comments/Comments';
 
 class Posts extends Component {
+    state = { visible: false };
+
     componentDidMount() {
         const { fetchPosts } = this.props;
         fetchPosts();
@@ -12,7 +15,16 @@ class Posts extends Component {
     handleClickOnPost = (e) => {
         e.preventDefault();
         const { fetchPost } = this.props;
+        this.setState({
+            visible: true,
+        });
         fetchPost(e.target.dataset.groupid);
+    }
+
+    hideModal = () => {
+        this.setState({
+            visible: false,
+        });
     }
 
     render() {
@@ -25,7 +37,7 @@ class Posts extends Component {
                         <ul>
                             {posts.data.map(item => (
                                 <li key={item.id}>
-                                    <a href="#" onClick={this.handleClickOnPost} data-groupId={item.id}>
+                                    <a href="#" onClick={this.handleClickOnPost} data-groupid={item.id}>
                                         {item.title}
                                     </a>
                                 </li>
@@ -35,11 +47,12 @@ class Posts extends Component {
                 </Spin>
                 <Modal
                     title={post.data && post.data.title}
-                    visible={post.postId !== null}
+                    visible={post.postId !== null && this.state.visible}
+                    onOk={this.hideModal}
+                    onCancel={this.hideModal}
                 >
-                    <p>
-                        {post.data && post.data.body}
-                    </p>
+                    <p>{post.data && post.data.body}</p>
+                    <Comments key={post.postId} postId={post.postId} />
                 </Modal>
             </Fragment>
         );

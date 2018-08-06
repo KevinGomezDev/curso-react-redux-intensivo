@@ -1,0 +1,10 @@
+.commentsText{
+    font-size: smaller;
+}
+li p:first-of-type{
+    font-weight: 500;
+}
+
+li p:nth-child(2){
+    color: darkslategray;
+}
